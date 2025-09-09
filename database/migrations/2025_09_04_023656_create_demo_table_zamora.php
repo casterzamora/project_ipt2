@@ -15,7 +15,7 @@ class CreateDemoTableZamora extends Migration
     {
         Schema::create('demo_table_zamora', function (Blueprint $table) {
             $table->id();
-            $table->string(column: 'zamora');
+            $table->string('zamora');
             $table->timestamps();
         });
     }
@@ -30,3 +30,4 @@ class CreateDemoTableZamora extends Migration
         Schema::dropIfExists('demo_table_zamora');
     }
 }
+
