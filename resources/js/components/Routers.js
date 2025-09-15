@@ -1,22 +1,25 @@
-import React from 'react'
-import ReactDOM from "react-dom"
-import {BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Home from './Home';
+import About from './About';
+import Contact from './Contact';
 
-import Example from './Example';
-
-export default function Routers() {
+export default function AppRouter() {
     return (
-      <Router>
-        <Routes>
-            <Route path="/" element={<Example />} />
-            <Route path="/home" element={<Home/>} />
-        </Routes>
+        <Router>
+            <nav style={{ padding: '10px', background: '#f4f4f4' }}>
+                <Link to="/" style={{ marginRight: '10px' }}>Home</Link>
+                <Link to="/about" style={{ marginRight: '10px' }}>About</Link>
+                <Link to="/contact">Contact</Link>
+            </nav>
 
-      </Router>
-
-    )
-}
-
-if(document.getElementById("root")) {
-    ReactDOM.render(<Routers />, document.getElementById("root"));
+            <div style={{ padding: '20px' }}>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/contact" element={<Contact />} />
+                </Routes>
+            </div>
+        </Router>
+    );
 }

@@ -1,10 +1,5 @@
-import React from "react";
-import {Link} from "react";
+import React from 'react';
 
 export default function Home() {
-    return (
-        <div>
-            <Link to="/Example">Example</Link>
-        </div>
-    );
+    return <h1>Welcome to the Home Page</h1>;
 }
